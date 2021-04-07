@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TamaGUI:jar">
+    <output-path>$PROJECT_DIR$/TamaGUI_jar</output-path>
+    <root id="archive" name="TamaGUI.jar">
+      <element id="module-output" name="TamaGUI" />
+    </root>
+  </artifact>
+</component>
