@@ -48,7 +48,8 @@ public class TamaFrame extends javax.swing.JFrame implements ActionListener {
     }
 
     public void leTamagoshiParle(){
-        this.tamago.parler();
+        this.tamago.parle();
+        this.tamago.renvoyerEtat();
         this.leDialogueDuTamagoshi.setText(this.tamago.renvoyerEtat());
     }
 

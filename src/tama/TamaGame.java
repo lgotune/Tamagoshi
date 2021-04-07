@@ -104,12 +104,16 @@ public class TamaGame {
             TamaFrame t = iterator.next();
             if (!t.getTamago().consommeEnergy() || !t.getTamago().consommeFun() || t.getTamago().vieillit())
                 aliveTamagoshis.remove(t.getTamago());
-            if (aliveTamagoshis.isEmpty() || nbCycle == 10){
-                JOptionPane.showMessageDialog(null,resultat(),"",JOptionPane.INFORMATION_MESSAGE);
+            if (aliveTamagoshis.isEmpty() || nbCycle == Tamagoshi.getLifeTime()){
                 t.getBoutonJouer().setEnabled(false);
-                t.getBoutonJouer().setEnabled(false);
+                t.getBoutonNourrir().setEnabled(false);
+                t.dispose();
             }
 
+        }
+        if (aliveTamagoshis.isEmpty() || nbCycle == Tamagoshi.getLifeTime()){
+            JOptionPane.showMessageDialog(null,resultat(),"",JOptionPane.INFORMATION_MESSAGE);
+            frameTamagoshis.clear();
         }
     }
 
@@ -129,8 +133,9 @@ public class TamaGame {
             num++;
         }else{
             num = 0;
-            nbCycle ++;
+
         }
+        if(num == 0){nbCycle ++;}
         enableAllButtons();
         for (TamaFrame tf:frameTamagoshis) {
             tf.leTamagoshiParle();

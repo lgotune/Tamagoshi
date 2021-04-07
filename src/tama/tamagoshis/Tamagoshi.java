@@ -43,20 +43,21 @@ public class Tamagoshi {
     public void parle() // Exo 16
     {
         String etat = "";
-        if (energy < 5)
+        if (energy < 5 && isAlive())
             etat += "je suis affamé";
-        if (fun < 5) {
+        if (fun < 5 && isAlive()) {
             if (!etat.isEmpty())
                 etat += " et ";
             etat += "je m'ennuie à mourrir";
         }
-        if (etat.isEmpty()) {
+        if (etat.isEmpty() && isAlive()) {
             etat = "Tout va bien !";
         } else {
             etat = etat + " !";
         }
-        etatDuTamagoshi = etat;
-
+        if(isAlive()) {
+            etatDuTamagoshi = etat;
+        }
     }
 
     public String renvoyerEtat(){
