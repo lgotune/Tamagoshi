@@ -21,6 +21,7 @@ public class TamaFrame extends javax.swing.JFrame implements ActionListener {
     private TamaGame jeuEnCours;
     private Tamagoshi tamago;
 
+    /** Constructeur TamaFrame */
     public TamaFrame(TamaGame jeu){
         tamago = null;
         leDialogueDuTamagoshi = new JTextArea();
@@ -46,30 +47,30 @@ public class TamaFrame extends javax.swing.JFrame implements ActionListener {
 
         this.jeuEnCours = jeu;
     }
-
+    /** Faire parler le tamagoshi */
     public void leTamagoshiParle(){
         this.tamago.parle();
         this.tamago.renvoyerEtat();
         this.leDialogueDuTamagoshi.setText(this.tamago.renvoyerEtat());
     }
-
+    /** Retourner le tamagoshi */
     public Tamagoshi getTamago() {
         return tamago;
     }
-
+    /** Modifier le tamagoshi */
     public void setTamago(Tamagoshi tamago) {
         this.tamago = tamago;
     }
-
+    /** Retourner le bouton Nourrir */
     public JButton getBoutonNourrir() {
         return boutonNourrir;
     }
-
+    /** Retourner le bouton Jouer */
     public JButton getBoutonJouer() {
         return boutonJouer;
     }
 
-
+    /** Actions à l'appui des boutons */
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == boutonNourrir){
@@ -93,7 +94,7 @@ public class TamaFrame extends javax.swing.JFrame implements ActionListener {
 
     public void mouseExited(MouseEvent e) {   }
 
-
+    /** Initialiser les frames */
     public void initialisationFrame(){
         this.setSize(400,400);
         this.setLocation(300,400);

@@ -4,7 +4,6 @@ import tama.tamagoshis.GrosJoueur;
 import tama.tamagoshis.GrosMangeur;
 import tama.tamagoshis.Lunatique;
 import tama.tamagoshis.Tamagoshi;
-import tama.Utilisateur;
 
 import javax.swing.*;
 import java.util.*;
@@ -79,7 +78,8 @@ public class TamaGame {
         aliveTamagoshis.addAll(allTamagoshis);
     }
 
-    public void enableAllButtons(){
+    /** Changer l'état des boutons */
+    public void changeStateOfButtons(){
         for (TamaFrame tf:frameTamagoshis) {
             if(tf.getTamago().isAlive()){
                 if (num % 2 == 0) {
@@ -136,7 +136,7 @@ public class TamaGame {
 
         }
         if(num == 0){nbCycle ++;}
-        enableAllButtons();
+        changeStateOfButtons();
         for (TamaFrame tf:frameTamagoshis) {
             tf.leTamagoshiParle();
         }
@@ -168,7 +168,7 @@ public class TamaGame {
     }*/
 
 
-
+    /** Calcul le score */
     private double score() {
         int score = 0;
         for (Tamagoshi t : allTamagoshis)
@@ -176,6 +176,7 @@ public class TamaGame {
         return score * 100 / (Tamagoshi.getLifeTime() * allTamagoshis.size());
     }
 
+    /** Retourne le résultat */
     private String resultat() {
         String res = "";
         for (Tamagoshi t : allTamagoshis) {

@@ -23,6 +23,7 @@ public class Tamagoshi {
     private static int lifeTime = 5;
 
     /**
+     * Constructeur tamagoshi de type normal
      * @param name Tamagoshi's name
      */
     public Tamagoshi(String name) {
@@ -35,11 +36,7 @@ public class Tamagoshi {
         fun = generateur.nextInt(5) + 3;
     }
 
-    public String parler(){
-        return etatDuTamagoshi;
-    }
-
-
+    /** Donner l'état général du tamagoshi */
     public void parle() // Exo 16
     {
         String etat = "";
@@ -60,6 +57,7 @@ public class Tamagoshi {
         }
     }
 
+    /** Donner l'état actuel du tamagoshi */
     public String renvoyerEtat(){
         return this.etatDuTamagoshi;
     }
@@ -68,6 +66,7 @@ public class Tamagoshi {
         System.out.println("\n\t" + name + " : \"" + phrase + "\"");
     }*/
 
+    /** Faire manger le tamagoshi */
     public boolean mange() { // Exo 4
         if (energy < maxEnergy) {
             energy += generateur.nextInt(3) + 1;
@@ -79,11 +78,13 @@ public class Tamagoshi {
         }
     }
 
+    /** Faire vieillir le tamagoshi */
     public boolean vieillit() { // Exo 5
         age++;
         return age == getLifeTime();
     }
 
+    /** Consommer l'énergie du tamagoshi */
     public boolean consommeEnergy() { // Exo 6
         energy--;
         if (energy <= 0) {
@@ -92,7 +93,7 @@ public class Tamagoshi {
         }
         return true;
     }
-
+    /** Consommer le fun du tamagoshi */
     public boolean consommeFun() { // Exo 6
         fun--;
         if (fun <= 0) {
@@ -103,23 +104,27 @@ public class Tamagoshi {
     }
 
     /**
-     * @return Returns the age.
+     * @return Retourner l'âge.
      */
     public int getAge() {
         return age;
     }
 
+    /**
+     * @return Retourner le nom.
+     */
     public String getName() {
         return name;
     }
 
     /**
-     * @return Returns the lifeTime.
+     * @return Retourner le temps de vie.
      */
     public static int getLifeTime() {
         return lifeTime;
     }
 
+    /** Faire jouer le tamagoshi */
     public boolean joue() {
         if (fun < maxFun) {
             fun += generateur.nextInt(3) + 1;
@@ -135,6 +140,7 @@ public class Tamagoshi {
         return name + " : energy=" + energy + ", fun=" + fun;
     }
 
+    /** Verifier si le tamagoshi est en vie */
     public boolean isAlive() {
         return fun > 0 && energy > 0 && age <= getLifeTime();
     }

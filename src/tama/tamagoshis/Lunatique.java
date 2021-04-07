@@ -10,6 +10,7 @@ package tama.tamagoshis;
 public class Lunatique extends Tamagoshi {
 
     /**
+     * Constructeur tamagoshi de type lunatique
      * @param name
      */
     public Lunatique(String name) {
@@ -17,6 +18,7 @@ public class Lunatique extends Tamagoshi {
     }
 
     /**
+     * Consommer le fun d'un lunatique
      * @see Tamagoshi#consommeEnergy()
      */
     @Override
@@ -27,6 +29,7 @@ public class Lunatique extends Tamagoshi {
     }
 
     /**
+     * Consommer le fun d'un lunatique
      * @see Tamagoshi#consommeFun()
      */
     @Override

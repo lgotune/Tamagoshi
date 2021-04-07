@@ -21,6 +21,7 @@ public class TamaJPanel extends JPanel {
     private Cercle oeilGauche, oeilDroit, tete;
     private Rectangle bouche;
 
+    /** Constructeur TamaJPanel */
     public TamaJPanel() {
         oeilGauche = new Cercle(new Point(160,150),20);
         oeilDroit = new Cercle(new Point(240,150),20);
@@ -30,6 +31,7 @@ public class TamaJPanel extends JPanel {
         listeFigures = new ArrayList<ObjetGraphique>(Arrays.asList(oeilDroit,oeilGauche,bouche,tete));
     }
 
+    /** Afficher les formes */
     @Override
     protected void paintComponent(Graphics g){
         super.paintComponent(g);

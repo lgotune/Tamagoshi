@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 
 public class Utilisateur {
 
+    /** Récupérer la saisie utilisateur */
     public static String saisieClavier() {
 
         /*
